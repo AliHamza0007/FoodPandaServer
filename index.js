@@ -6,6 +6,7 @@ import productRoute from "./routes/productRoute.js";
 import categoryRoute from "./routes/categoryRoute.js";
 import cors from "cors";
 import { fileURLToPath } from "url";
+import path from "path";
 
 
 // ******************
