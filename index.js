@@ -22,7 +22,7 @@ const __dirname = path.dirname(__filename);
 //midllerwares
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, "./client/dist")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 //routing
 
 app.use("/api/v1/auth", authRoutes);
@@ -59,9 +59,10 @@ app.use("/api/v1/contact", async (req, res) => {
   }
 });
 // rest api
+
 app.use("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/dist/index.html"));
 });
 
 //rest api listen terms of Foodpanda
-app.listen(port, () => console.log(`Server Running on FoodPanda `));
+app.listen(port, () => console.log(`Server Running on FoodPanda ${port}`));
