@@ -15,11 +15,12 @@ dotenv.config();
 const port = process.env.PORT || 8000;
 // database config file
 ConnectDB();
-//es module fixed
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 //midllerwares
 app.use(express.json());
 app.use(cors());
-
+app.use(express.static(path.join(__dirname, "./client/dist")));
 //routing
 
 app.use("/api/v1/auth", authRoutes);
@@ -56,9 +57,9 @@ app.use("/api/v1/contact", async (req, res) => {
   }
 });
 // rest api
-// app.use('/', (req, res) => {
-//   res.write("Hi FoodPanda");
-//   res.end();
-// });
+/app.use("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/dist/index.html"));
+});
+
 //rest api listen terms of Foodpanda
 app.listen(port, () => console.log(`Server Running on FoodPanda`));
