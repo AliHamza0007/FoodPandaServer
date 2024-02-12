@@ -60,7 +60,7 @@ app.use("/api/v1/contact", async (req, res) => {
 });
 // rest api
 
-app.use("/", function (req, res) {
+app.use("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/dist/index.html"));
 });
 
