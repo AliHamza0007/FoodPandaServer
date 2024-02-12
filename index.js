@@ -64,4 +64,4 @@ app.use("*", function (req, res) {
 });
 
 //rest api listen terms of Foodpanda
-app.listen(port, () => console.log(`Server Running on FoodPanda`));
+app.listen(port, () => console.log(`Server Running on FoodPanda `));
