@@ -60,8 +60,12 @@ app.use("/api/v1/contact", async (req, res) => {
 });
 // rest api
 
+<<<<<<< HEAD
 
 app.use("*", function (req, res) {
+=======
+app.get("*", (req, res) => {
+>>>>>>> e31cd8ab96132863e2bd6fcca40cea9239fae826
   res.sendFile(path.join(__dirname, "./client/dist/index.html"));
 });
 
