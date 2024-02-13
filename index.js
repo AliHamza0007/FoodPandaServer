@@ -5,8 +5,8 @@ import authRoutes from "./routes/authRoute.js";
 import productRoute from "./routes/productRoute.js";
 import categoryRoute from "./routes/categoryRoute.js";
 import cors from "cors";
-import { fileURLToPath } from "url";
 import path from "path";
+import { fileURLToPath } from "url";
 
 
 // ******************
@@ -22,7 +22,7 @@ const __dirname = path.dirname(__filename);
 //midllerwares
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "./client/dist")));
 //routing
 
 app.use("/api/v1/auth", authRoutes);
@@ -64,4 +64,4 @@ app.use("*", function (req, res) {
 });
 
 //rest api listen terms of Foodpanda
-app.listen(port, () => console.log(`Server Running on FoodPanda `));
+app.listen(port, () => console.log(`Server Running on FoodPanda ${port}`));
