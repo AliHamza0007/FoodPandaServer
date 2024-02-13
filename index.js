@@ -22,7 +22,7 @@ const __dirname = path.dirname(__filename);
 //midllerwares
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, "./client/dist")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 //routing
 
 app.use("/api/v1/auth", authRoutes);
